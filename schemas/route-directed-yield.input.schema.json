@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-directed-yield-service/route-directed-yield-input",
+  "title": "routeDirectedYieldInput",
+  "description": "The request routeDirectedYield() takes. principalAssets is the caller's own recorded principal in the vault asset's smallest unit, never invented. mandate/contractAddress are absent for a paper cycle.",
+  "type": "object",
+  "required": ["memberAddress", "vault", "principalAssets", "poolAddress", "cycleId"],
+  "properties": {
+    "memberAddress": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "vault": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "principalAssets": { "type": "string", "pattern": "^(0|[1-9][0-9]*)$" },
+    "poolAddress": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "cycleId": { "type": "string", "minLength": 1 },
+    "chainId": { "type": "string" },
+    "contractAddress": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "mandate": { "type": "object" }
+  },
+  "additionalProperties": false
+}

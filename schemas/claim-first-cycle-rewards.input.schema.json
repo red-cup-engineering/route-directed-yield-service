@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-directed-yield-service/claim-first-cycle-rewards-input",
+  "title": "claimFirstCycleRewardsInput",
+  "description": "The request claimFirstCycleRewards() takes.",
+  "type": "object",
+  "required": ["holderAddress", "comptroller", "distributor", "wellToken", "poolAddress", "cycleId"],
+  "properties": {
+    "holderAddress": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "comptroller": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "distributor": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "wellToken": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "poolAddress": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" },
+    "cycleId": { "type": "string", "minLength": 1 },
+    "chainId": { "type": "string" },
+    "mandate": { "type": "object" }
+  },
+  "additionalProperties": false
+}

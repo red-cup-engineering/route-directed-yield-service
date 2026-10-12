@@ -1,0 +1,54 @@
+{
+  "name": "@red-cup-engineering/route-directed-yield-service",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Tidepool's directed-yield routing: reads a member's Morpho vault position through treasury-observation-service, computes the accrued shares to redeem (never principal), and emits one routing intent -- paper unless a mandate is supplied and admitted by key-management's sign-with-wallet. The Moonwell WELL claim is the first-cycle special case. lib/contracts/route-directed-yield.sol is the stateless on-chain helper that redeems and forwards in one call.",
+  "keywords": [
+    "561-group",
+    "tidepool",
+    "directed-yield",
+    "morpho",
+    "moonwell",
+    "evm",
+    "base",
+    "defi"
+  ],
+  "scripts": {
+    "check": "for f in src/*.mjs scripts/*.mjs; do node --check \"$f\" || exit 1; done",
+    "test": "node --test test/*.test.mjs"
+  },
+  "exports": {
+    "./intent": {
+      "types": "./src/intent.d.ts",
+      "default": "./src/intent.mjs"
+    },
+    "./mandate-execution": {
+      "types": "./src/mandate-execution.d.ts",
+      "default": "./src/mandate-execution.mjs"
+    },
+    "./route-directed-yield": "./scripts/route-directed-yield.mjs",
+    "./claim-first-cycle-rewards": "./scripts/claim-first-cycle-rewards.mjs",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@red-cup-engineering/key-management-services-section": "workspace:*",
+    "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
+    "@red-cup-engineering/treasury-observation-service": "workspace:*",
+    "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "@red-cup-engineering/json-schema-services-section": "workspace:*"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "sideEffects": false,
+  "files": [
+    "src",
+    "scripts",
+    "lib",
+    "schemas",
+    "README.md"
+  ],
+  "license": "UNLICENSED"
+}

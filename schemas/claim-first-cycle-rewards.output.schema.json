@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-directed-yield-service/claim-first-cycle-rewards-output",
+  "title": "claimFirstCycleRewardsOutput",
+  "description": "claimFirstCycleRewards()'s result: a refusal datum, or one routing intent record folded onto cycle/holder/pool identity.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["routed", "cycleId", "reason"],
+      "properties": { "routed": { "const": false }, "cycleId": { "type": "string" }, "reason": { "type": "string", "minLength": 1 } },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["routed", "cycleId", "holderAddress", "poolAddress", "paper", "mandate", "transactions", "amounts", "sources"],
+      "properties": {
+        "routed": { "const": true },
+        "cycleId": { "type": "string" }, "holderAddress": { "type": "string" }, "poolAddress": { "type": "string" },
+        "paper": { "type": "boolean" }, "mandate": { "type": ["string", "null"] },
+        "transactions": { "type": "array", "items": { "type": "object" } },
+        "amounts": { "type": "object" }, "sources": { "type": "array" },
+        "mandateRefusal": { "type": "string" },
+        "transactionHashes": { "type": "array", "items": { "type": "string" } },
+        "receipt": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

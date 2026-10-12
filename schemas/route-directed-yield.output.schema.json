@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "route-directed-yield-service/route-directed-yield-output",
+  "title": "routeDirectedYieldOutput",
+  "description": "routeDirectedYield()'s result: a refusal datum, or one routing intent record ({paper, mandate, transactions, amounts, sources}) folded onto cycle/member/vault/pool identity.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["routed", "cycleId", "reason"],
+      "properties": { "routed": { "const": false }, "cycleId": { "type": "string" }, "reason": { "type": "string", "minLength": 1 } },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["routed", "cycleId", "memberAddress", "vault", "poolAddress", "apy", "paper", "mandate", "transactions", "amounts", "sources"],
+      "properties": {
+        "routed": { "const": true },
+        "cycleId": { "type": "string" }, "memberAddress": { "type": "string" }, "vault": { "type": "string" }, "poolAddress": { "type": "string" },
+        "apy": { "type": "object" },
+        "paper": { "type": "boolean" }, "mandate": { "type": ["string", "null"] },
+        "transactions": { "type": "array", "items": { "type": "object" } },
+        "amounts": { "type": "object" }, "sources": { "type": "array" },
+        "mandateRefusal": { "type": "string" },
+        "transactionHashes": { "type": "array", "items": { "type": "string" } },
+        "receipt": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
