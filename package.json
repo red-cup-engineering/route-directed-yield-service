@@ -31,13 +31,13 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@red-cup-engineering/key-management-services-section": "workspace:*",
-    "@red-cup-engineering/semiotic-eavt-services-section": "workspace:*",
-    "@red-cup-engineering/treasury-observation-service": "workspace:*",
-    "ethers": "6.17.0"
+    "ethers": "6.17.0",
+    "@red-cup-engineering/key-management-services-section": "0.5.3",
+    "@red-cup-engineering/semiotic-eavt-services-section": "0.1.0",
+    "@red-cup-engineering/treasury-observation-service": "0.5.1"
   },
   "devDependencies": {
-    "@red-cup-engineering/json-schema-services-section": "workspace:*"
+    "@red-cup-engineering/json-schema-services-section": "0.5.0"
   },
   "engines": {
     "node": ">=24"
@@ -50,5 +50,6 @@
     "schemas",
     "README.md"
   ],
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "private": false
 }
