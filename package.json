@@ -3,6 +3,11 @@
   "version": "0.2.2",
   "type": "module",
   "description": "Tidepool's directed-yield routing: reads a member's Morpho vault position through treasury-observation-service, computes the accrued shares to redeem (never principal), and emits one routing intent -- paper unless a mandate is supplied and admitted by key-management's sign-with-wallet. The Moonwell WELL claim is the first-cycle special case. lib/contracts/route-directed-yield.sol is the stateless on-chain helper that redeems and forwards in one call.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red-cup-engineering/financial-engineering-services-section.git",
+    "directory": "services/route-directed-yield-service"
+  },
   "keywords": [
     "561-group",
     "tidepool",
