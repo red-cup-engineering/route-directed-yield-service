@@ -36,12 +36,12 @@
   },
   "dependencies": {
     "ethers": "6.17.0",
-    "@red-cup-engineering/semiotic-eavt-engineering-services-section": "0.1.0",
+    "@red-cup-engineering/semiotic-eavt-services-section": "0.1.0",
     "@red-cup-engineering/key-management-services-section": "0.5.5",
     "@red-cup-engineering/treasury-observation-service": "0.5.3"
   },
   "devDependencies": {
-    "@red-cup-engineering/json-schema-engineering-services-section": "0.5.0"
+    "@red-cup-engineering/json-schema-services-section": "0.5.0"
   },
   "engines": {
     "node": ">=24"
